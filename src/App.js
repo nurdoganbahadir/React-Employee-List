@@ -11,6 +11,7 @@ function App() {
       const newNumber = number - 5;
       setNumber(newNumber);
       setFilterData(data.slice(newNumber - 1, newNumber + 4));
+      console.log("disable");
     }
   };
   const nextHandle = () => {
@@ -18,9 +19,12 @@ function App() {
       const newNumber = number + 5;
       setNumber(newNumber);
       setFilterData(data.slice(newNumber - 1, newNumber + 4));
+      console.log("disable");
     }
   };
 
+  const disableNext = number + 4 >= data.length;
+  const disablePrev = number - 1 <= 0;
   return (
     <main>
       <section className="container">
@@ -30,8 +34,12 @@ function App() {
         </h5>
         <List filterData={filterData} />
         <div className="btns">
-          <button onClick={prevHandle}>Prev</button>
-          <button onClick={nextHandle}>Next</button>
+          <button onClick={prevHandle} disabled={disablePrev}>
+            Prev
+          </button>
+          <button onClick={nextHandle} disabled={disableNext}>
+            Next
+          </button>
         </div>
       </section>
     </main>
