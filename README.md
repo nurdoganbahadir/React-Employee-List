@@ -40,7 +40,7 @@ SOLUTION
 
 ## Expected Outcome
 
-![employeelist](employee.gif)
+![employeelist](employee-list.gif)
 
 ## Objective
 
